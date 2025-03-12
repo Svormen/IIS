@@ -1,0 +1,17 @@
+@media all and (max-width: 600px) {
+    td.hide{
+        display:none;
+        width:0;
+        height:0;
+        opacity:0;
+        visibility: collapse;
+    }    
+
+    th.hide{
+        display:none;
+        width:0;
+        height:0;
+        opacity:0;
+        visibility: collapse;
+    }   
+}

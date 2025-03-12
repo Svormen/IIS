@@ -1,0 +1,154 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-2"/>
+<title>Projekt IIS</title>
+<style type="text/css">
+    table { border-collapse: collapse; }
+    td, th { border: 1px solid black; padding: 0.3em 0.5em; text-align: left; }
+    dt { font-weight: bold; margin-top: 0.5em; }
+</style>
+</head>
+<body>
+
+<!-- Zkontrolujte prosím nastavení kódování v hlavičce dokumentu 
+ podle použitého editoru -->
+
+<h1>Knihovna: vyhledávání, rezervace, půjčování a objednávání knih</h1> <!-- Nahradte názvem svého zadání -->
+
+<dl>
+<dt>Autoři</dt>
+<dd>Jakub Zaukolec <!-- Nahraďte skutečným jménem a e-mailem autora a popisem činnosti -->
+    <a href="mailto:xzauko00@stud.fit.vutbr.cz">xzauko00@stud.fit.vutbr.cz</a> -
+    Vytvorenie databázy, spojazdnenie na eve, vytvorenie navigácie + vizuálu, hlavnej stránky, stránky jednotlivých kníh, riešenie rezervácií, úprava profilu
+</dd>
+<dd>Jozef Čásar <!-- Nahraďte skutečným jménem a e-mailem autora a popisem činnosti -->
+    <a href="mailto:xcasar03@stud.fit.vutbr.cz">xcasar03@stud.fit.vutbr.cz</a> - 
+    Vytvorenie databázy, vytvorenie loginu/registrácie, kontaktnej stránky + úprava informácií o jednotlivých knižniciach, pridanie kníh do databázy, správa uživateľov z pohľadu admina
+</dd>
+<dd>Slavomír Svorada <!-- Nahraďte skutečným jménem a e-mailem autora a popisem činnosti -->
+    <a href="mailto:xsvora02@stud.fit.vutbr.cz">xsvora02@stud.fit.vutbr.cz</a> - 
+    Vytvorenie databázy, vytvorenie systému riešenia objednávok (objednávania a vyriaďovania) + pridávanie kníh z pohľadu admina, vytvorenie triggerov v databázy
+</dd>
+<dt>URL aplikace</dt>
+<dd><a href="https://www.stud.fit.vutbr.cz/~xzauko00/IIS/">https://www.stud.fit.vutbr.cz/~xzauko00/IIS/</a></dd>
+<dd></dd>
+</dl>
+
+<h2>Uživatelé systému pro testování</h2>
+<p>Uveďte prosím existující zástupce <strong>všech rolí uživatelů</strong>.</p>
+<table>
+<tr><th>Login</th><th>Heslo</th><th>Role</th></tr>
+<tr><td>admin@gmail.com</td><td>admin</td><td>Administrátor</td></tr>
+<tr><td>distributor@gmail.com</td><td>distributor</td><td>Distribútor</td></tr>
+<tr><td>knihovnickahana@gmail.com</td><td>knihovnik</td><td>Knihovník</td></tr>
+<tr><td>knihovnikmaros@gmail.com</td><td>knihovnik</td><td>Knihovník</td></tr>
+<tr><td>alex.babka11@gmail.com</td><td>user</td><td>User</td></tr>
+</table>
+
+<p></p> 
+
+<h2>Implementace</h2>
+<table>
+    <tbody>
+        <tr>
+            <td>index.php</td>
+            <td>Hlavná stránka s knihami a filtrovaním</td>
+        </tr>
+        <tr>
+            <td>/static/footer.php</td>
+            <td>Footer</td>
+        </tr>
+        <tr>
+            <td>/shared/contact_add_lib.php</td>
+            <td>Pridanie novej knižnice</td>
+        </tr>
+        <tr>
+            <td>/shared/contact_admin.php</td>
+            <td>Úprava informácií o knižnici</td>
+        </tr>
+        <tr>
+            <td>/shared/contact_user.php</td>
+            <td>Zobrazenie informácií o danej knižnici</td>
+        </tr>
+        <tr>
+            <td>/shared/contact.php</td>
+            <td>Zobrazenie všetkých knižníc, po otvorení sa objavia údaje o knižnici</td>
+        </tr>
+        <tr>
+            <td>/shared/profile.php</td>
+            <td>Úprava informácií o používateľovi</td>
+        </tr>
+        <tr>
+            <td>/services/component.php</td>
+            <td>Komunikácia s databázou</td>
+        </tr>
+        <tr>
+            <td>/orders/orders.php</td>
+            <td>Zobrazenie objednávok pre distribútora</td>
+        </tr>
+        <tr>
+            <td>/login/*.php</td>
+            <td>Registrácia, prihlásenie a odhlásenie užívateľa</td>
+        </tr>
+        <tr>
+            <td>/librarian/new_order.php</td>
+            <td>Vystavenie objednávky na knihu</td>
+        </tr>
+        <tr>
+            <td>/librarian/order.php</td>
+            <td>Objednávky na knihu, za ktorú sa hlasovalo</td>
+        </tr>
+        <tr>
+            <td>/librarian/reservations.php</td>
+            <td>Správa rezervácií čitateľov</td>
+        </tr>
+        <tr>
+            <td>/images/</td>
+            <td>Priečinok pre ukladanie fotografií</td>
+        </tr>
+        <tr>
+            <td>/book/add_book.php</td>
+            <td>Pridanie nového knižného titulu</td>
+        </tr>
+        <tr>
+            <td>/book/book.php</td>
+            <td>Informácie o knihe</td>
+        </tr>
+        <tr>
+            <td>/admin/add_books.php</td>
+            <td>Pridanie ľubovoľného počtu kníh do knižnice</td>
+        </tr>
+        <tr>
+            <td>/admin/user_management.php</td>
+            <td>Zobrazenie užívateľov po rozkliknutí zmena rolí</td>
+        </tr>
+        <tr>
+            <td>/admin/change_user_role.php</td>
+            <td>Zmena rolí, uživateľ sa môže stať knihovníkom, len keď je knižnica bez knihovníka</td>
+        </tr>
+        <tr>
+            <td>/admin/reservations.php</td>
+            <td>Správa rezervácií</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Databáze</h3>
+<img src="model.png"/>
+<h2>Instalace</h2>
+
+Stručně popište: 
+<ul>
+<li>Projekt beží na serveri eva. Po skopírovaní zdrojových súborov do WWW zložky na eve a nastavení mysql databázy projekt bežal v pohode.</li>
+<li>Pre beh projektu sú dostačujúce verzie PHP a mysql tie verzie, ktoré bežia na eve. Mysql-5.7 php-7.1</li>
+<li>Databáza bola inicializovaná pomocou phpmyadmin dostupného cez informačný systém. Inicializačný skript je v zložke /database/database.sql</li>
+</ul>
+
+<h2>Známé problémy</h2>
+<p>Nie sme si vedomí, že by nejaká časť nebola implementovaná. Jediný problém, ktorý sa vyskytol na servery eva je ukladanie obrázkov priamo z webu, kedy sa obrázok neuloží s dostatočnými právami na jeho čítanie (napr. pri pridávaní knihy alebo novej knižnice). Pri lokálnom testovaní tento problém nebol.</p>
+
+</body>
+</html>
