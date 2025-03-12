@@ -1,2 +1,2 @@
 # IIS
-Informačné systémy
+Informačné Systémy
